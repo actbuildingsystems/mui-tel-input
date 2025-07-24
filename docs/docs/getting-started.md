@@ -20,7 +20,7 @@ We have completed installing the package.
 Here is a simple usage for using the component:
 
 ```jsx
-import React from 'react'
+import * as React from 'react'
 import { MuiTelInput } from 'mui-tel-input'
 
 const MyComponent = () => {

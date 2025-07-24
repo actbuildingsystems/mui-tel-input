@@ -1,6 +1,6 @@
 import type { MetadataJson } from 'libphonenumber-js'
 import metadatas from 'libphonenumber-js/metadata.min.json'
-import { getKeys } from '@shared/helpers/object'
+import { getKeys } from '../helpers/object'
 
 export const COUNTRIES: MetadataJson['countries'] = metadatas.countries
 

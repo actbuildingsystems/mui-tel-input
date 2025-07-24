@@ -1,13 +1,13 @@
-import React from 'react'
+import * as React from 'react'
 import { AsYouType } from 'libphonenumber-js'
-import type { MuiTelInputContinent } from '@shared/constants/continents'
-import { COUNTRIES, type MuiTelInputCountry } from '@shared/constants/countries'
-import { matchIsArray } from '@shared/helpers/array'
+import type { MuiTelInputContinent } from '../constants/continents'
+import { COUNTRIES, type MuiTelInputCountry } from '../constants/countries'
+import { matchIsArray } from '../helpers/array'
 import {
   getCallingCodeOfCountry,
   matchContinentsIncludeCountry
-} from '@shared/helpers/country'
-import { removeOccurrence } from '@shared/helpers/string'
+} from '../helpers/country'
+import { removeOccurrence } from '../helpers/string'
 import type { MuiTelInputInfo, MuiTelInputReason } from '../../index.types'
 
 type UsePhoneDigitsParams = {

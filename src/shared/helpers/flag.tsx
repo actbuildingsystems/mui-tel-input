@@ -1,6 +1,5 @@
-import React from 'react'
-import unknownFlag from '@assets/unknown-flag.png'
-import { FLAGS_SVG } from '@shared/constants/flags'
+import * as React from 'react'
+import { FLAGS_SVG } from '../constants/flags'
 import type { GetFlagElement, MuiTelInputCountry } from '../../index.types'
 
 const getDefaultImageSrc = (isoCode: MuiTelInputCountry) => {
@@ -44,11 +43,5 @@ export const getDefaultFlagElement: GetFlagElement = (
 }
 
 export const defaultUnknownFlagElement = (
-  <img
-    src={unknownFlag}
-    loading="lazy"
-    width={26}
-    alt="unknown"
-    className={flagImgClass}
-  />
+  <div>?</div>
 )

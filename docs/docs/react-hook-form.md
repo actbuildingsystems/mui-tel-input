@@ -4,7 +4,7 @@ Here an example if you want to plug `MuiTelInput` to your form using [React Hook
 
 ```tsx
 import React from "react";
-import ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom";
 import Button from "@mui/material/Button";
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 import { Controller, useForm } from "react-hook-form";

@@ -1,5 +1,5 @@
-import type React from 'react'
-import { putCursorAtEndOfInput } from '@shared/helpers/dom'
+import * as React from 'react'
+import { putCursorAtEndOfInput } from '../helpers/dom'
 import type { TextFieldProps } from '@material-ui/core'
 
 type Options = Pick<TextFieldProps, 'onDoubleClick' | 'onCopy' | 'onFocus'> & {
@@ -36,7 +36,7 @@ export function useEvents({
     }
   }
 
-  const handleFocus = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
     if (inputRef.current) {
       putCursorAtEndOfInput(inputRef.current)
     }

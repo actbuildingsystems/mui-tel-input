@@ -1,29 +1,29 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { flagContainerClass } from '@components/Flag/Flag'
-import FlagButton, { flagButtonClass } from '@components/FlagButton/FlagButton'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import { flagContainerClass } from './components/Flag/Flag'
+import FlagButton, { flagButtonClass } from './components/FlagButton/FlagButton'
 import {
   callingCodeClass,
   listItemIconFlagClass,
   listItemTextCountryClass,
   menuItemClass
-} from '@components/FlagMenuItem/FlagMenuItem'
-import FlagsMenu, { menuClass } from '@components/FlagsMenu/FlagsMenu'
+} from './components/FlagMenuItem/FlagMenuItem'
+import FlagsMenu, { menuClass } from './components/FlagsMenu/FlagsMenu'
 import {
   getCallingCodeOfCountry,
   getValidCountry
-} from '@shared/helpers/country'
+} from './shared/helpers/country'
 import {
   defaultUnknownFlagElement,
   flagImgClass,
   getDefaultFlagElement
-} from '@shared/helpers/flag'
-import { refToRefs } from '@shared/helpers/ref'
-import { removeOccurrence } from '@shared/helpers/string'
-import { useAnchor } from '@shared/hooks/useAnchor'
-import { useEvents } from '@shared/hooks/useEvents'
-import { useMismatchProps } from '@shared/hooks/useMissmatchProps'
-import usePhoneDigits from '@shared/hooks/usePhoneDigits'
+} from './shared/helpers/flag'
+import { refToRefs } from './shared/helpers/ref'
+import { removeOccurrence } from './shared/helpers/string'
+import { useAnchor } from './shared/hooks/useAnchor'
+import { useEvents } from './shared/hooks/useEvents'
+import { useMismatchProps } from './shared/hooks/useMissmatchProps'
+import usePhoneDigits from './shared/hooks/usePhoneDigits'
 import type {
   MuiTelInputContinent,
   MuiTelInputCountry,
@@ -45,7 +45,7 @@ export type {
   MuiTelInputReason
 }
 
-export { matchIsValidTel } from '@shared/helpers/valid-phone-number'
+export { matchIsValidTel } from './shared/helpers/valid-phone-number'
 
 export const textFieldClass = 'MuiTelInput-TextField'
 

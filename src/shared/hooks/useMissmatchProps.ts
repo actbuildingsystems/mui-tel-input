@@ -1,7 +1,7 @@
-import React from 'react'
-import { CONTINENTS } from '@shared/constants/continents'
-import { getFirstIntersection } from '@shared/helpers/array'
-import { log } from '@shared/helpers/log'
+import * as React from 'react'
+import { CONTINENTS } from '../constants/continents'
+import { getFirstIntersection } from '../helpers/array'
+import { log } from '../helpers/log'
 import type { MuiTelInputProps } from '../../index.types'
 
 export function useMismatchProps(props: MuiTelInputProps) {

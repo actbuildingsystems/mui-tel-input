@@ -9,7 +9,7 @@ This package is written in **TypeScript**. So you don't need to create your own 
 **Nota bene**: Props are defined within the `MuiTelInputProps` interface.
 
 ```tsx
-import React from 'react'
+import * as React from 'react'
 import {
   MuiTelInput,
   type MuiTelInputCountry,

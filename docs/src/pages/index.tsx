@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import clsx from 'clsx'
 import { MuiTelInput } from 'mui-tel-input'
 import Link from '@docusaurus/Link'

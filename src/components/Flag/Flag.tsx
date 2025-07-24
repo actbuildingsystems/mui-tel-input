@@ -1,5 +1,5 @@
-import React from 'react'
-import type { MuiTelInputCountry } from '@shared/constants/countries'
+import * as React from 'react'
+import type { MuiTelInputCountry } from '../../shared/constants/countries'
 
 export type FlagProps = {
   isoCode: MuiTelInputCountry | null

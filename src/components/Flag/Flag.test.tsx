@@ -1,5 +1,5 @@
-import React from 'react'
-import { getDefaultFlagElement, getDefaultImgProps } from '@shared/helpers/flag'
+import * as React from 'react'
+import { getDefaultFlagElement, getDefaultImgProps } from '../../shared/helpers/flag'
 import { render } from '@testing-library/react'
 import Flag from './Flag'
 import '@testing-library/jest-dom/vitest'

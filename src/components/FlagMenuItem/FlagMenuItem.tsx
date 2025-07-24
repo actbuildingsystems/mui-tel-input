@@ -1,7 +1,7 @@
-import React from 'react'
-import Flag from '@components/Flag/Flag'
-import { COUNTRIES, type MuiTelInputCountry } from '@shared/constants/countries'
-import { getDefaultImgProps } from '@shared/helpers/flag'
+import * as React from 'react'
+import Flag from '../Flag/Flag'
+import { COUNTRIES, type MuiTelInputCountry } from '../../shared/constants/countries'
+import { getDefaultImgProps } from '../../shared/helpers/flag'
 import type { GetFlagElement } from '../../index.types'
 import { ListItemIcon, ListItemText, MenuItem, type MenuItemProps, Typography } from '@material-ui/core'
 

@@ -6,50 +6,43 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
     globals: true
   },
   resolve: {
     alias: {
-      '@assets': resolve(__dirname, './src/assets'),
-      '@shared': resolve(__dirname, './src/shared'),
-      '@components': resolve(__dirname, './src/components')
+      "@assets": resolve(__dirname, "./src/assets"),
+      "@shared": resolve(__dirname, "./src/shared"),
+      "@components": resolve(__dirname, "./src/components")
     }
   },
   build: {
-    target: 'esnext',
-    minify: true,
+    target: "esnext",
+    minify: false, // Let the consuming project handle minification
     lib: {
-      formats: ['es'],
-      entry: resolve(__dirname, 'src/index.tsx'),
-      name: 'Mui-tel-input',
-      fileName: (format) => {
-        return `mui-tel-input.${format}.js`
-      }
+      formats: ["es"],
+      entry: resolve(__dirname, "src/index.tsx"),
+      name: "MuiTelInput",
+      fileName: () => "index.js" // Simple filename
     },
     rollupOptions: {
+      external: () => true, // Externalize everything - no bundling
       output: {
-        sourcemapExcludeSources: true,
-        globals: {
-          react: 'React',
-          '@mui/material/InputAdornment': 'InputAdornment',
-          '@mui/material/TextField': 'TextField',
-          '@mui/material/IconButton': 'IconButton',
-          '@mui/material/styles': 'styles',
-          'react/jsx-runtime': 'jsxRuntime',
-          '@mui/material/Menu': 'Menu',
-          '@mui/material/MenuItem': 'MenuItem',
-          '@mui/material/Typography': 'Typography',
-          '@mui/material/ListItemIcon': 'ListItemIcon',
-          '@mui/material/ListItemText': 'ListItemText',
-          '@mui/material/colors': 'colors'
-        }
+        preserveModules: true, // Keep original module structure
+        preserveModulesRoot: "src",
+        entryFileNames: "[name].js",
+        format: "es"
       }
     }
   },
   plugins: [
-    peerDepsExternal(),
-    react(),
-    dts({ exclude: ['/**/*.stories.tsx', '/**/*.test.tsx'], rollupTypes: true })
+    react({
+      jsxRuntime: "automatic"
+    }),
+    dts({
+      exclude: ["/**/*.stories.tsx", "/**/*.test.tsx"],
+      rollupTypes: true,
+      insertTypesEntry: true
+    })
   ]
 })

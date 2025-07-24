@@ -1,4 +1,4 @@
-import type React from 'react'
+import * as React from 'react'
 import { matchIsObject } from './object'
 
 export function refToRefs(refs: (React.Ref<unknown> | undefined)[]) {

@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import {
   defaultUnknownFlagElement,
   getDefaultFlagElement
-} from '@shared/helpers/flag'
+} from '../../shared/helpers/flag'
 import { render } from '@testing-library/react'
 import FlagButton from './FlagButton'
 import '@testing-library/jest-dom/vitest'

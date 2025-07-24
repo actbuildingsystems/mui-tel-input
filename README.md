@@ -1,3 +1,8 @@
+## NOTE
+
+This repo was forked in order to downgrade the version of material-ui to v4, as the original repo was using v7.
+
+
 <div align="center">
   <img src="https://viclafouch.github.io/mui-tel-input/img/logo.svg" width="80" />
 </div>
@@ -32,7 +37,7 @@ The component uses [libphonenumber-js](https://www.npmjs.com/package/libphonenum
 ## Usage
 
 ```jsx
-import React from 'react'
+import * as React from 'react'
 import { MuiTelInput } from 'mui-tel-input'
 
 const MyComponent = () => {

@@ -1,6 +1,6 @@
 import type { NumberType } from 'libphonenumber-js'
-import type { MuiTelInputContinent } from '@shared/constants/continents'
-import type { MuiTelInputCountry } from '@shared/constants/countries'
+import type { MuiTelInputContinent } from './shared/constants/continents'
+import type { MuiTelInputCountry } from './shared/constants/countries'
 import type { IconButtonProps, MenuProps, TextFieldProps } from '@material-ui/core'
 
 type BaseTextFieldProps = Omit<

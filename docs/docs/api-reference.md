@@ -208,7 +208,7 @@ You could also customize the CSS of the `img` element.
 ### Example
 
 ```tsx
-import React from 'react'
+import * as React from 'react'
 import FlagFR from 'my-svg/fr/flag'
 import FlagBE from 'my-svg/be/flag'
 import { MuiTelInput, MuiTelInputCountry } from 'mui-tel-input'
@@ -264,7 +264,7 @@ This prop let you to customize the `unknown flag`, changed the `width` or `heigh
 ### Example
 
 ```tsx
-import React from 'react'
+import * as React from 'react'
 import { MuiTelInput } from 'mui-tel-input'
 import unknownFlag from 'path/to/what/u/want'
 

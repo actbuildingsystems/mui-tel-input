@@ -1,4 +1,4 @@
-import type { MuiTelInputCountry } from '@shared/constants/countries'
+import type { MuiTelInputCountry } from '../shared/constants/countries'
 import {
   fireEvent,
   screen,

@@ -1,6 +1,6 @@
-import React from 'react'
+import * as React from 'react'
 import { expect } from 'vitest'
-import { putCursorAtEndOfInput } from '@shared/helpers/dom'
+import { putCursorAtEndOfInput } from '../dom'
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/vitest'
 

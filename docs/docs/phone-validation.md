@@ -7,7 +7,7 @@ sidebar_position: 2
 Maybe you need to validate the phone number value and check that it's correct. To do that, just import `matchIsValidTel` from the package and use this function, it will return a `boolean`.
 
 ```jsx
-import React from 'react'
+import * as React from 'react'
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input'
 
 const MyComponent = () => {

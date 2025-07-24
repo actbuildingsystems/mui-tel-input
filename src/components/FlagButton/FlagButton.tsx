@@ -1,13 +1,12 @@
-import React from 'react'
-import Flag from '@components/Flag/Flag'
-import type { MuiTelInputCountry } from '@shared/constants/countries'
-import { DEFAULT_LANG } from '@shared/constants/lang'
-import { getCallingCodeOfCountry } from '@shared/helpers/country'
-import { getDefaultImgProps } from '@shared/helpers/flag'
-import { getDisplayNames } from '@shared/helpers/intl'
+import * as React from 'react'
+import Flag from '../Flag/Flag'
+import type { MuiTelInputCountry } from '../../shared/constants/countries'
+import { DEFAULT_LANG } from '../../shared/constants/lang'
+import { getCallingCodeOfCountry } from '../../shared/helpers/country'
+import { getDefaultImgProps } from '../../shared/helpers/flag'
+import { getDisplayNames } from '../../shared/helpers/intl'
 import type { GetFlagElement } from '../../index.types'
 import { IconButton, type IconButtonProps, Typography } from '@material-ui/core'
-import { grey } from '@material-ui/core/colors'
 
 export type FlagButtonProps = IconButtonProps & {
   isoCode: MuiTelInputCountry | null
@@ -80,7 +79,7 @@ const FlagButton = ({
       {forceCallingCode && isoCode ? (
         <Typography
           style={{
-            borderRight: `1px solid ${grey[300]}`,
+            borderRight: `1px solid #e0e0e0`,
             paddingRight: 10,
             cursor: 'default',
             pointerEvents: 'none'

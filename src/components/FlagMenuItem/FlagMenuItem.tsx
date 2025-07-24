@@ -59,6 +59,7 @@ const FlagMenuItem = ({
         variant="body2"
         color="textSecondary"
         className={callingCodeClass}
+        style={{ marginRight: '10px' }}
       >
         +{COUNTRIES[isoCode]?.[0]}
       </Typography>

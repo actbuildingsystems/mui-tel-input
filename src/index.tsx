@@ -24,8 +24,6 @@ import { useAnchor } from '@shared/hooks/useAnchor'
 import { useEvents } from '@shared/hooks/useEvents'
 import { useMismatchProps } from '@shared/hooks/useMissmatchProps'
 import usePhoneDigits from '@shared/hooks/usePhoneDigits'
-import InputAdornment from '@mui/material/InputAdornment'
-import TextField from '@mui/material/TextField'
 import type {
   MuiTelInputContinent,
   MuiTelInputCountry,
@@ -34,6 +32,7 @@ import type {
   MuiTelInputProps,
   MuiTelInputReason
 } from './index.types'
+import { InputAdornment, TextField } from '@material-ui/core'
 
 export { AsYouType, getNumberType } from 'libphonenumber-js'
 
@@ -50,7 +49,7 @@ export { matchIsValidTel } from '@shared/helpers/valid-phone-number'
 
 export const textFieldClass = 'MuiTelInput-TextField'
 
-const MuiTelInput = (props: MuiTelInputProps) => {
+const MuiTelInput = React.forwardRef((props: MuiTelInputProps, ref) => {
   const {
     forceCallingCode = false,
     onlyCountries,
@@ -61,8 +60,6 @@ const MuiTelInput = (props: MuiTelInputProps) => {
     onCopy,
     onBlur,
     value = '',
-    ref: propRef,
-    slotProps,
     inputRef: inputRefFromProps,
     disabled,
     onChange,
@@ -141,39 +138,33 @@ const MuiTelInput = (props: MuiTelInputProps) => {
         type="tel"
         disabled={disabled}
         value={validInputValue}
-        ref={refToRefs([propRef])}
+        ref={ref as any}
         onDoubleClick={handleDoubleClick}
         inputRef={refToRefs([inputRef, inputRefFromProps])}
         className={`${textFieldClass} ${className || ''}`}
         onChange={onInputChange}
         onBlur={handleBlur}
         onFocus={handleFocus}
-        slotProps={{
-          htmlInput: {
+        InputProps={{
+          inputProps: {
             onCopy: handleCopy,
-            // eslint-disable-next-line @typescript-eslint/no-misused-spread
-            ...slotProps?.htmlInput
           },
-          input: {
-            startAdornment: (
-              <InputAdornment position="start" sx={{ flexShrink: 0 }}>
-                <FlagButton
-                  isFlagsMenuOpened={Boolean(anchorEl)}
-                  isoCode={isoCode}
-                  forceCallingCode={forceCallingCode}
-                  onClick={openMenu}
-                  disabled={disabled}
-                  getFlagElement={getFlagElement}
-                  unknownFlagElement={unknownFlagElement}
-                  disableDropdown={Boolean(disableDropdown)}
-                  {...FlagIconButtonProps}
-                />
-              </InputAdornment>
-            ),
-            ref: anchorRef,
-            // eslint-disable-next-line @typescript-eslint/no-misused-spread
-            ...slotProps?.input
-          }
+          startAdornment: (
+            <InputAdornment position="start" style={{ flexShrink: 0 }}>
+              <FlagButton
+                isFlagsMenuOpened={Boolean(anchorEl)}
+                isoCode={isoCode}
+                forceCallingCode={forceCallingCode}
+                onClick={openMenu}
+                disabled={disabled}
+                getFlagElement={getFlagElement}
+                unknownFlagElement={unknownFlagElement}
+                disableDropdown={Boolean(disableDropdown)}
+                {...FlagIconButtonProps}
+              />
+            </InputAdornment>
+          ),
+          ref: anchorRef,
         }}
         {...restTextFieldProps}
       />
@@ -194,7 +185,7 @@ const MuiTelInput = (props: MuiTelInputProps) => {
       ) : null}
     </>
   )
-}
+});
 
 export const classes = {
   textField: textFieldClass,

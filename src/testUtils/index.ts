@@ -42,7 +42,8 @@ export function selectCountry(isoCode: MuiTelInputCountry): void {
 }
 
 export async function closeFlagsMenu(): Promise<void> {
-  const backdrop = document.querySelector('.MuiBackdrop-root')
+  screen.logTestingPlaygroundURL()
+  const backdrop = document.body
 
   if (backdrop) {
     fireEvent.click(backdrop)

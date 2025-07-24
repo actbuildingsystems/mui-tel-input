@@ -5,9 +5,9 @@ import { DEFAULT_LANG } from '@shared/constants/lang'
 import { getCallingCodeOfCountry } from '@shared/helpers/country'
 import { getDefaultImgProps } from '@shared/helpers/flag'
 import { getDisplayNames } from '@shared/helpers/intl'
-import IconButton, { type IconButtonProps } from '@mui/material/IconButton'
 import type { GetFlagElement } from '../../index.types'
-import { Styled } from './FlagButton.styled'
+import { IconButton, type IconButtonProps, Typography } from '@material-ui/core'
+import { grey } from '@material-ui/core/colors'
 
 export type FlagButtonProps = IconButtonProps & {
   isoCode: MuiTelInputCountry | null
@@ -59,7 +59,7 @@ const FlagButton = ({
           className={`${flagButtonClass} ${className || ''}`}
           role="presentation"
           disableRipple
-          sx={{ pointerEvents: 'none', aspectRatio: '1 / 1' }}
+          style={{ pointerEvents: 'none', aspectRatio: '1 / 1' }}
           component="span"
         >
           {flagElement}
@@ -69,7 +69,7 @@ const FlagButton = ({
           aria-label="Open flags menu"
           className={`${flagButtonClass} ${className || ''}`}
           aria-haspopup="listbox"
-          sx={{ aspectRatio: '1 / 1' }}
+          style={{ aspectRatio: '1 / 1' }}
           aria-controls={isFlagsMenuOpened ? 'select-country' : undefined}
           aria-expanded={isFlagsMenuOpened ? 'true' : 'false'}
           {...iconButtonProps}
@@ -78,9 +78,16 @@ const FlagButton = ({
         </IconButton>
       )}
       {forceCallingCode && isoCode ? (
-        <Styled.CallingCodeSplitted>
+        <Typography
+          style={{
+            borderRight: `1px solid ${grey[300]}`,
+            paddingRight: 10,
+            cursor: 'default',
+            pointerEvents: 'none'
+          }}
+        >
           +{getCallingCodeOfCountry(isoCode)}
-        </Styled.CallingCodeSplitted>
+        </Typography>
       ) : null}
     </>
   )

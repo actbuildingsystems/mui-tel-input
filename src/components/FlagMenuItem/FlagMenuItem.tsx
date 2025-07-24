@@ -2,10 +2,8 @@ import React from 'react'
 import Flag from '@components/Flag/Flag'
 import { COUNTRIES, type MuiTelInputCountry } from '@shared/constants/countries'
 import { getDefaultImgProps } from '@shared/helpers/flag'
-import MenuItem, { type MenuItemProps } from '@mui/material/MenuItem'
-import Typography from '@mui/material/Typography'
 import type { GetFlagElement } from '../../index.types'
-import { Styled } from './FlagsMenuItem.styled'
+import { ListItemIcon, ListItemText, MenuItem, type MenuItemProps, Typography } from '@material-ui/core'
 
 export type FlagMenuItemProps = MenuItemProps & {
   isoCode: MuiTelInputCountry
@@ -33,13 +31,16 @@ const FlagMenuItem = ({
 
   return (
     <MenuItem
-      {...restMenuItemProps}
+      {...restMenuItemProps as any}
       onClick={handleClick}
       role="option"
       data-testid={`option-${isoCode}`}
       className={menuItemClass}
     >
-      <Styled.ListItemIcon className={listItemIconFlagClass}>
+      <ListItemIcon
+        className={listItemIconFlagClass}
+        style={{ marginRight: '10px' }}
+      >
         <Flag isoCode={isoCode}>
           {getFlagElement(isoCode, {
             countryName,
@@ -47,13 +48,16 @@ const FlagMenuItem = ({
             imgProps: getDefaultImgProps({ isoCode, countryName })
           })}
         </Flag>
-      </Styled.ListItemIcon>
-      <Styled.ListItemText className={listItemTextCountryClass}>
+      </ListItemIcon>
+      <ListItemText
+        className={listItemTextCountryClass}
+        style={{ marginRight: '10px' }}
+      >
         {countryName}
-      </Styled.ListItemText>
+      </ListItemText>
       <Typography
         variant="body2"
-        color="text.secondary"
+        color="textSecondary"
         className={callingCodeClass}
       >
         +{COUNTRIES[isoCode]?.[0]}

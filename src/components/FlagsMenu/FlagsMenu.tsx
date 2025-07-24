@@ -5,8 +5,8 @@ import { ISO_CODES, type MuiTelInputCountry } from '@shared/constants/countries'
 import { DEFAULT_LANG } from '@shared/constants/lang'
 import { filterCountries } from '@shared/helpers/country'
 import { getDisplayNames } from '@shared/helpers/intl'
-import Menu, { type MenuProps } from '@mui/material/Menu'
 import type { GetFlagElement } from '../../index.types'
+import { Menu, type MenuProps } from '@material-ui/core'
 
 export type FlagsMenuProps = Partial<MenuProps> & {
   isoCode: MuiTelInputCountry | null
@@ -56,13 +56,6 @@ const FlagsMenu = ({
       open={Boolean(anchorEl)}
       id="select-country"
       className={`${menuClass} ${className || ''}`}
-      slotProps={{
-        list: {
-          role: 'listbox',
-          'aria-activedescendant': isoCode ? `country-${isoCode}` : '',
-          'aria-labelledby': 'select-country'
-        }
-      }}
       {...restMenuProps}
     >
       {countriesFiltered.map((isoCodeItem) => {

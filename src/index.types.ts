@@ -1,9 +1,7 @@
 import type { NumberType } from 'libphonenumber-js'
 import type { MuiTelInputContinent } from '@shared/constants/continents'
 import type { MuiTelInputCountry } from '@shared/constants/countries'
-import type { IconButtonProps } from '@mui/material/IconButton'
-import type { MenuProps } from '@mui/material/Menu'
-import type { TextFieldProps } from '@mui/material/TextField'
+import type { IconButtonProps, MenuProps, TextFieldProps } from '@material-ui/core'
 
 type BaseTextFieldProps = Omit<
   TextFieldProps,

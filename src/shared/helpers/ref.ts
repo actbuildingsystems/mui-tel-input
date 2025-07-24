@@ -7,7 +7,7 @@ export function refToRefs(refs: (React.Ref<unknown> | undefined)[]) {
       if (typeof toRef === 'function') {
         toRef(refInstance)
       } else if (toRef && matchIsObject(toRef) && 'current' in toRef) {
-        toRef.current = refInstance
+        (toRef as any).current = refInstance
       }
     })
   }

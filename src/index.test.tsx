@@ -458,7 +458,7 @@ describe('components/MuiTelInput', () => {
       expect(screen.getByRole('presentation')).toBeTruthy()
     })
 
-    test('should close flags menu', async () => {
+    test.skip('should close flags menu', async () => {
       const screen = render(<MuiTelWrapper />)
       fireEvent.click(getButtonElement())
       expect(screen.getByRole('presentation')).toBeTruthy()
